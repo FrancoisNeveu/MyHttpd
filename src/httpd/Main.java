@@ -37,12 +37,14 @@ public class Main {
 				    public void run() { 
 				    	Main.server.stop(0);
 				    	System.out.println("Shuting down the server...");
+				    	System.exit(0);
 				    }
 				 });
 				System.out.println("Press CTRL-C to exit...");
 				Main.server.start();		
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
+				System.exit(1);
 			}
 		} else {
 			System.err.println("Wrong number of Arguments\n Usage: httpd PORT ROOT_DIR");
